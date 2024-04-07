@@ -4,6 +4,11 @@ import { getDictionary } from "../[lang]/dictionaries";
 
 const MovieDetails = async ({ id, lang }) => {
   const movie = await getMovieById(id);
+
+  if (!movie) {
+    return;
+  }
+
   const {
     poster_path,
     title,

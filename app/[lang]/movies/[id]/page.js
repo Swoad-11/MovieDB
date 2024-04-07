@@ -1,8 +1,15 @@
 import MovieDetails from "@/app/components/MovieDetails";
 import Navbar from "@/app/components/Navbar";
 import Sidebar from "@/app/components/Sidebar";
+import { notFound } from "next/navigation";
+import { getMovieById } from "../../movies";
 
-const MovieDetailsPage = ({ params: { id, lang } }) => {
+const MovieDetailsPage = async ({ params: { id, lang } }) => {
+  const movie = await getMovieById(id);
+  if (!movie) {
+    notFound();
+  }
+
   return (
     <body className="dark:bg-body bg-white font-[Sora] dark:text-white text-dark">
       <Navbar />
