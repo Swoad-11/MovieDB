@@ -1,6 +1,6 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
-import ThemeProvider from "./providers/ThemeProvider";
+import Provider from "./components/Provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -12,7 +12,13 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <ThemeProvider className={inter.className}>{children}</ThemeProvider>
+      <Provider>
+        <body
+          className={`${inter.className} font-[Sora] text-dark bg-white dark:text-white dark:bg-body`}
+        >
+          {children}
+        </body>
+      </Provider>
     </html>
   );
 }
