@@ -42,9 +42,11 @@ const MovieDetails = async ({ id, lang }) => {
           />
         </div>
         <div className="col-span-8">
-          <h2 className="font-bold text-slate-300 text-2xl">{title}</h2>
-          <p className="my-2 text-slate-400 italic">{overview}</p>
-          <ul className="text-slate-300 space-y-2 my-8">
+          <h2 className="font-bold text-slate-500 dark:text-slate-300 text-2xl">
+            {title}
+          </h2>
+          <p className="my-2 text-slate-400  italic">{overview}</p>
+          <ul className="text-slate-500 dark:text-slate-300 space-y-2 my-8">
             <li>Release Date : {release_date}</li>
             <li>Average Vote : {vote_average}</li>
             <li>Vote Count : {vote_count}</li>

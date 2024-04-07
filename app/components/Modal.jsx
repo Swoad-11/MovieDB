@@ -3,8 +3,7 @@
 import { useRouter } from "next/navigation";
 import { createPortal } from "react-dom";
 import { useEffect, useRef } from "react";
-
-import Image from "next/image";
+import { IoMdCloseCircle } from "react-icons/io";
 
 const Modal = ({ children }) => {
   const modalRef = useRef(null);
@@ -21,16 +20,21 @@ const Modal = ({ children }) => {
   }
 
   return createPortal(
-    <dialog
-      ref={modalRef}
-      onClose={onHide}
-      className="shadow-teal-700 shadow-md border border-teal-600 flex flex-col p-2 rounded-md dark:bg-black dark:bg-opacity-95 dark:text-gray-100"
-    >
-      <span onClick={onHide} className="flex justify-end cursor-pointer">
-        <Image src="/xmark.svg" alt="close" width={30} height={30} />
-      </span>
-      {children}
-    </dialog>,
+    <div className="modal-backdrop">
+      <dialog
+        ref={modalRef}
+        onClose={onHide}
+        className="w-[75%] shadow-teal-700 shadow-md border border-teal-600 flex flex-col p-4 rounded-md dark:bg-slate-300/20 dark:bg-opacity-95 dark:text-gray-100"
+      >
+        <span
+          onClick={onHide}
+          className="flex justify-end cursor-pointer text-2xl dark:text-gray-100 text-black"
+        >
+          <IoMdCloseCircle />
+        </span>
+        {children}
+      </dialog>
+    </div>,
     document.getElementById("modal-root-content")
   );
 };
