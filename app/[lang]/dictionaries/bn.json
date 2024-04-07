@@ -1,7 +1,10 @@
 {
   "trending": "চলমান",
-  "new releases": "নতুন রিলিজ",
-  "coming soon": "শীঘ্রই আসছে",
-  "favourites": "প্রিয়",
-  "watch later": "পরে দেখুন"
+  "newReleases": "নতুন রিলিজ",
+  "comingSoon": "শীঘ্রই আসছে",
+  "favorites": "প্রিয়",
+  "watchLater": "পরে দেখুন",
+  "details": "বিস্তারিত",
+  "streamInHD": "HD স্ট্রিম করুন",
+  "downloadInHD": "HD ডাউনলোড করুন"
 }

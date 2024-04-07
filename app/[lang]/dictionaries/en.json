@@ -1,7 +1,10 @@
 {
   "trending": "Trending",
-  "new releases": "New Releases",
-  "coming soon": "Coming Soon",
-  "favourites": "Favourites",
-  "watch later": "Watch Later"
+  "newReleases": "New Releases",
+  "comingSoon": "Coming Soon",
+  "favorites": "Favorites",
+  "watchLater": "Watch Later",
+  "details": "Details",
+  "streamInHD": "Stream in HD",
+  "downloadInHD": "Download In HD"
 }

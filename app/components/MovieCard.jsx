@@ -3,9 +3,11 @@ import tag from "@/public/tag.svg";
 import star from "@/public/star.svg";
 import genreMapping from "../data/genreID";
 import Link from "next/link";
+import { getDictionary } from "../[lang]/dictionaries";
 
-export default function MovieCard({ movie }) {
-  const { title, vote_average, poster_path, genre_ids } = movie;
+const MovieCard = async ({ movie, lang }) => {
+  const dictionary = await getDictionary(lang);
+  const { title, vote_average, poster_path, genre_ids, id } = movie;
   let rating = vote_average / 2;
   const genres = genre_ids.map((id) => genreMapping[id]).join("/");
   return (
@@ -40,12 +42,14 @@ export default function MovieCard({ movie }) {
         </div>
         <Link
           className="bg-primary rounded-lg py-2 px-5 flex items-center justify-center gap-2 text-[#171923] font-semibold text-sm"
-          href="./modal.html"
+          href={`/movies/${id}`}
         >
           <Image src={tag} alt="" />
-          <span>Details</span>
+          <span>{dictionary.details}</span>
         </Link>
       </figcaption>
     </figure>
   );
-}
+};
+
+export default MovieCard;

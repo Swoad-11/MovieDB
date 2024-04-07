@@ -1,6 +1,10 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./dist/*.html"],
+  content: [
+    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+  ],
   darkMode: "class",
   theme: {
     extend: {
@@ -13,6 +17,10 @@ module.exports = {
         dark: "#171923",
         light: "#fff",
         body: "#1D1E28",
+      },
+      fontFamily: {
+        poppins: ["Poppins", "sans-serif"],
+        sora: ["Sora", "sans-serif"],
       },
     },
   },
